@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+     
+
+</head>
+<style>
+   
+</style>
+<body>
+   
+    <div class="container">
+        <div class="counter-div">
+            <h1>Random Number Generator</h1>
+            <span class="count hex" id="a">#ffffff</span>
+            <hr>
+            <div class="buttons">
+
+                <button class="reset generate">
+                Generate
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <script>
+      let hex = document.querySelector(".count");
+      let generate = document.querySelector(".reset");
+      let getcolor = () => {
+        let randomcolor = Math.random().toString(16).substring(2,8);
+        let color = document.body.style.backgroundColor = "#" + randomcolor;
+         hex.innerHTML = color;
+      }
+
+       generate.addEventListener("click",getcolor );
+    </script>
+</body>
+
+</html>
